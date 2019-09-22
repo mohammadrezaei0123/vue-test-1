@@ -1,6 +1,25 @@
 <template>
-  <div class="hello">
+  <div class="hello bg-info">
+    <Menu></Menu>
+    <Menu2></Menu2>
+    <Animes></Animes>
+    <W3Card></W3Card>
+    
+    <W3Card1></W3Card1>
     <h1>{{ msg }}</h1>
+    <Button1></Button1>
+    <InputPare></InputPare>
+    <p>fs4</p>
+    <Input1></Input1>
+    <RowCard></RowCard>
+    <ColCard></ColCard>
+    <ImageWithLoad></ImageWithLoad>
+    <CardContainer></CardContainer>
+    
+    <CardContainer1></CardContainer1>
+    <CardFlex></CardFlex>
+    <MoveForwadImage :imgHeight=50 ></MoveForwadImage>
+    <FixedImage :imgHeight=50  ></FixedImage>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -95,8 +114,44 @@
 </template>
 
 <script>
+import Button1 from "./Buttons/Button";
+import Input1 from "./Inputs/Input";
+import MoveForwadImage from "./Images/MoveForwadImage";
+import FixedImage from './Images/FixedImage'
+import ImageWithLoad from './Images/ImageWithLoad'
+import RowCard from "./Cards/RowCard";
+import ColCard from "./Cards/ColCard";
+import InputPare from "./Inputs/InputPare";
+import CardContainer from "./Containers/CardContainer";
+import CardContainer1 from "./Containers/CardContainer1";
+import CardFlex from "./Containers/CardFlex";
+import Fonts from "./Fonts/ResponsiveFont";
+
+import Menu from "./Menus/menu";
+import Menu2 from "./Menus/Menu2";
+import W3Card from "./W3Component/Card";
+
+import W3Card1 from "./W3Component/Card-1";
+import Animes from "./Animation/AnimationTest";
 export default {
   name: "HelloWorld",
+  components:{
+    Button1,Input1,MoveForwadImage,FixedImage
+    ,RowCard,ColCard,InputPare,ImageWithLoad,
+    CardContainer,CardFlex,CardContainer1,Fonts,
+    Menu,W3Card,W3Card1,Menu2,Animes
+  },
+  mounted(){
+    window.addEventListener("resize",this.helloResize)
+  },
+  beforeDestroy(){
+    window.removeEventListener("resize",this.helloResize)
+  },
+  methods:{
+    helloResize(){
+      console.log('this hello resize')
+    }
+  },
   props: {
     msg: String
   }
