@@ -1,5 +1,6 @@
 <template>
   <div class="hello bg-info">
+    <form-content/>
     <Menu></Menu>
     <Menu2></Menu2>
     <Animes></Animes>
@@ -10,6 +11,13 @@
     <Button1></Button1>
     <InputPare></InputPare>
     <p>fs4</p>
+    <move-relative/>
+    <Scroll/>
+    <Scroll1/>
+    
+    <Scroll2/>
+    
+    <Scroll3/>
     <Input1></Input1>
     <RowCard></RowCard>
     <ColCard></ColCard>
@@ -133,13 +141,24 @@ import W3Card from "./W3Component/Card";
 
 import W3Card1 from "./W3Component/Card-1";
 import Animes from "./Animation/AnimationTest";
+import FormContent from "./Forms/ShadowInput/FormContent";
+
+import Scroll from "./ScrollMove/ScrollSideRight";
+
+import Scroll1 from "./ScrollMove/ScrollSideLeft";
+
+import Scroll3 from "./ScrollMove/ScrollSideTop";
+
+import Scroll2 from "./ScrollMove/ScrollSideBottom";
+import MoveRelative  from "./MoveItems/MoveRelative";
 export default {
   name: "HelloWorld",
   components:{
     Button1,Input1,MoveForwadImage,FixedImage
     ,RowCard,ColCard,InputPare,ImageWithLoad,
     CardContainer,CardFlex,CardContainer1,Fonts,
-    Menu,W3Card,W3Card1,Menu2,Animes
+    Menu,W3Card,W3Card1,Menu2,Animes,FormContent,
+    Scroll,Scroll1,Scroll2,Scroll3,MoveRelative
   },
   mounted(){
     window.addEventListener("resize",this.helloResize)
